@@ -246,6 +246,7 @@
     [self willChangeValueForKey:aKey];
     if(pureModified)
         [pure willChangeValueForKey:aKey];
+    if (aValue==nil) aValue = [NSNull null];
     [changes setObject:aValue forKey:aKey];
     [self didChangeValueForKey:aKey];
     if(pureModified)

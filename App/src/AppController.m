@@ -697,7 +697,7 @@ NSDictionary* findBinding(NSWindow* window) {
     NSAppleScript* script = [[[NSAppleScript alloc] initWithContentsOfURL:url error:&errDict] autorelease];
     if(errDict)
     {
-        NSError* err = [NSError errorWithAppleScriptError:errDict];
+        NSError* err = [[NSError errorWithAppleScriptError:errDict] autorelease];
         if(error)
             *error =  [err localizedDescription];
         GTMLoggerError(@"Error loading script %d %d", path, [err localizedDescription]);

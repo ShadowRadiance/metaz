@@ -389,12 +389,12 @@
             initWithObjects:ratingkeys
                     forKeys:ratingvalues];
                     
-        NSArray* typeNames = [[NSArray alloc] initWithObjects:
+        NSArray* typeNames = [[[NSArray alloc] initWithObjects:
             @"", @"Movie", @"Normal", 
             @"Audiobook", @"Whacked Bookmark", @"Music Video",
             @"Short Film", @"TV Show", @"Booklet",
             @"Unknown value: 14", @"Unknown value: 21", @"Unknown value: 23",
-            nil];
+            nil] autorelease];
 
         MZEnumTag* videoTypeTag = [MZTag tagForIdentifier:MZVideoTypeTagIdent];
         NSAssert([typeNames count] == [[videoTypeTag values] count], @"Bad number of types");
